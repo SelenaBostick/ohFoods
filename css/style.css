@@ -150,10 +150,26 @@ nav .fa-magnifying-glass {
   padding-right: 25px;
 }
 .how li:hover {
-  background-color: hsl(267deg, 66%, 95%);
+  animation: bgLight 400ms ease-in-out forwards;
 }
 .how li:hover i {
-  color: #9256dc;
+  animation: colorPri 250ms cubic-bezier(0.89, 0.34, 0, 0.98) forwards 100ms;
+}
+@keyframes bgLight {
+  from {
+    background-color: white;
+  }
+  to {
+    background-color: hsl(267deg, 66%, 95%);
+  }
+}
+@keyframes colorPri {
+  from {
+    color: #777;
+  }
+  to {
+    color: #9256dc;
+  }
 }
 
 .restaurants {
@@ -374,42 +390,39 @@ main .order {
 }
 
 a.heart {
-  width: 50px;
-  height: 50px;
-  padding: 1px;
+  width: 60px;
+  height: 60px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-a.heart:hover .fa-heart::before {
-  animation: fill 2s infinite both;
+a.heart:hover .secHeart {
+  animation: fill 500ms cubic-bezier(0.63, 0.1, 0.31, 0.97) forwards;
 }
 
 .fa-heart {
-  position: relative;
   font-size: 28px;
   color: #9256dc;
   -webkit-text-stroke-color: #333;
   -webkit-text-stroke-width: 1px;
-  overflow: none;
+  color: #9256dc;
+  opacity: 1;
+  transform: translateX(50%);
 }
-.fa-heart::before {
-  content: "";
-  font-size: 28px;
-  -webkit-text-stroke-color: #333;
+
+.secHeart {
   color: white;
-  -webkit-text-stroke-width: 1px;
+  position: relative;
+  transform: translateX(-50%);
 }
 
 @keyframes fill {
-  from {
-    color: linear-gradient(217deg, white, #9256dc);
-    transform: translateX(-20%) translateY(-100%) rotate(0deg);
+  0% {
+    opacity: 1;
   }
-  to {
-    color: linear-gradient(217deg, #9256dc, #9256dc);
-    transform: translateX(-20%) translateY(-200%) rotate(360deg);
+  100% {
+    opacity: 0;
   }
 }
 article .heart {

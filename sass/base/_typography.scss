@@ -167,13 +167,29 @@ nav {
         }
 
         &:hover {
-            background-color: hsla(267, 66%, 95%, 1);
+            animation: bgLight 400ms ease-in-out forwards;
         }
 
         &:hover i {
-            color: $ColorPrimary;
+            animation: colorPri 250ms cubic-bezier(.89,.34,0,.98) forwards 100ms;
         }
     }
+@keyframes bgLight {
+    from {
+        background-color: white;
+    }
+    to{
+        background-color: hsla(267, 66%, 95%, 1);
+    }
+}
+@keyframes colorPri {
+    from {
+        color: #777;
+    }
+    to{
+        color: $ColorPrimary;
+    }
+}
 }
 
 .restaurants {
@@ -428,45 +444,41 @@ main {
 a.heart{
     //position: relative;
     //left: 20px;
-    width: 50px;
-    height: 50px;
-    padding: 1px;
+    width: 60px;
+    height: 60px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     &:hover{
-        .fa-heart::before{
-            animation: fill 2s infinite both;
+        .secHeart{
+            animation: fill 500ms cubic-bezier(.63,.1,.31,.97) forwards;
         }
-    }
+
+}
 }
 .fa-heart {
-    position: relative;
     //   text-shadow: 0px 0px 1px solid #000;
     font-size: 28px;
     color: $ColorPrimary;
     -webkit-text-stroke-color: #333;
     -webkit-text-stroke-width: 1px;
-    overflow: none;
+    color: $ColorPrimary;
+    opacity: 1;
+    transform: translateX(50%);
     //transform: translateY(35%);
-
-    &::before{
-        content: "";
-        font-size: 28px;
-    -webkit-text-stroke-color: #333;
+}
+.secHeart{
     color: white;
-    -webkit-text-stroke-width: 1px;
-    }
+    position: relative;
+    transform: translateX(-50%);
 }
 @keyframes fill {
-    from{
-        color: linear-gradient(217deg,white, $ColorPrimary);
-        transform: translateX(-20%) translateY(-100%) rotate(0deg);
+    0%{
+       opacity: 1;
     }
-    to{
-        color: linear-gradient(217deg,$ColorPrimary, $ColorPrimary);
-        transform: translateX(-20%) translateY(-200%) rotate(360deg);
+    100%{
+       opacity: 0;
     }
 }
 

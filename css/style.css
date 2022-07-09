@@ -8,8 +8,22 @@ a {
   text-decoration: none;
 }
 
+.wrapContent {
+  all: none;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: none;
+}
+
+.blurImg {
+  display: none;
+}
+
 body {
   width: 100%;
+  height: 100%;
 }
 
 header {
@@ -27,21 +41,20 @@ header h1 img {
 }
 
 nav {
-  position: relative;
-  left: -10px;
+  color: black;
 }
 nav form {
   width: 100%;
-  margin: auto;
+  height: 50px;
   text-align: center;
   background-color: hsl(0deg, 0%, 92%);
-  padding: 1em 10px 1em 10px;
+  padding: 1em 0px 1em 0px;
   box-shadow: 1px 3px 4px inset hsl(0deg, 0%, 80%);
 }
 nav form .fa-solid {
   opacity: 0.7;
   padding-right: 10px;
-  padding-left: 10px;
+  padding-left: 40px;
 }
 nav form input {
   font-size: 18px;
@@ -49,8 +62,11 @@ nav form input {
   background-color: hsl(0deg, 0%, 92%);
 }
 nav form input::placeholder {
-  color: #333;
+  opacity: 0.9;
   margin: auto;
+}
+nav .fa-magnifying-glass {
+  display: none;
 }
 
 .book {
@@ -59,11 +75,11 @@ nav form input::placeholder {
   margin-top: -30px;
   text-align: center;
   padding-top: 50px;
-  padding-bottom: 60px;
+  padding-bottom: 80px;
   background-color: #f9f9f9;
 }
 .book h2 {
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   font-size: 32px;
 }
 .book p {
@@ -72,7 +88,7 @@ nav form input::placeholder {
   font-weight: 100;
   margin: auto;
   font-size: 24px;
-  padding-bottom: 24px;
+  padding-bottom: 40px;
 }
 .book a p {
   margin: auto;
@@ -83,76 +99,111 @@ nav form input::placeholder {
   font-size: 24px;
   border-radius: 50px;
   box-shadow: 0px 5px 8px #c6c6c6;
-  background-image: linear-gradient(176deg, #FF79DA, #9356DC);
+  background-image: linear-gradient(176deg, #FF79DA, #9256dc);
 }
 
 .how {
   margin: auto;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 80px;
 }
 .how h2 {
   margin-left: 20px;
   font-size: 32px;
+  font-weight: 700;
+}
+.how .list-number {
+  flex: 0 0 auto;
+  color: white;
+  background-color: #9256dc;
+  box-sizing: border-box;
+  border-radius: 50%;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding-top: 5px;
+  position: relative;
+  left: -25px;
 }
 .how li {
+  background-color: hsl(0deg, 0%, 97%);
   list-style: none;
-  font-size: 22px;
-  font-weight: 500;
-  width: 85%;
-  padding: 10px 0px 5px 50px;
+  font-size: 18px;
+  font-weight: 700;
+  width: 95%;
+  max-width: 600px;
+  box-sizing: border-box;
+  padding: 10px 0px 5px 10px;
   height: 80px;
-  margin: auto;
   margin-top: 30px;
-  border-radius: 30px;
-  box-shadow: 0px 4px 12px #eee;
+  border-radius: 25px;
+  box-shadow: 2px 3px 14px hsl(0deg, 0%, 80%);
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
 }
 .how li i {
+  font-size: 24px;
   color: #777;
   padding-right: 25px;
+}
+.how li:hover {
+  background-color: hsl(267deg, 66%, 95%);
+}
+.how li:hover i {
+  color: #9256dc;
 }
 
 .restaurants {
   padding-top: 50px;
   background-color: #f9f9f9;
   padding-bottom: 50px;
+  height: 1450px;
+  overflow: hidden;
 }
 .restaurants h2 {
   margin-left: 20px;
   font-size: 32px;
 }
 .restaurants article {
-  height: 275px;
-  width: 85%;
+  background-color: white;
+  height: 310px;
+  width: 90%;
+  min-width: 24%;
+  padding: 0px;
   margin: auto;
-  margin-bottom: 20px;
-  padding-bottom: 5px;
-  box-shadow: 0px 4px 12px #eee;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 15px #ddd;
   border-radius: 20px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-around;
 }
 .restaurants article img {
   width: 100%;
+  height: 100%;
+  max-height: 230px;
   object-fit: cover;
-  align-self: flex-start;
 }
-.restaurants a {
+.restaurants article a {
   text-decoration: none;
   color: #000;
 }
-.restaurants h4, .restaurants p {
+.restaurants article h4,
+.restaurants article p {
   margin-left: 20px;
   font-size: 18px;
 }
-.restaurants h4 {
+.restaurants article p {
+  width: 60%;
+}
+.restaurants article h4 {
+  width: 100%;
   margin-bottom: -10px;
   margin-top: 1rem;
 }
@@ -174,6 +225,8 @@ footer a {
   color: white;
 }
 footer img {
+  width: 32%;
+  min-width: 100px;
   color: white;
   filter: invert(100%);
 }
@@ -307,13 +360,492 @@ main .order {
   font-size: 24px;
   border-radius: 50px;
   box-shadow: 0px 5px 8px #c6c6c6;
-  background-image: linear-gradient(176deg, #FF79DA, #9356DC);
+  background-image: linear-gradient(176deg, #FF79DA, #9256dc);
 }
 
 #longText {
   height: 65px;
 }
 
+.noMobile {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+a.heart {
+  width: 50px;
+  height: 50px;
+  padding: 1px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a.heart:hover .fa-heart::before {
+  animation: fill 2s infinite both;
+}
+
+.fa-heart {
+  position: relative;
+  font-size: 28px;
+  color: #9256dc;
+  -webkit-text-stroke-color: #333;
+  -webkit-text-stroke-width: 1px;
+  overflow: none;
+}
+.fa-heart::before {
+  content: "";
+  font-size: 28px;
+  -webkit-text-stroke-color: #333;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+}
+
+@keyframes fill {
+  from {
+    color: linear-gradient(217deg, white, #9256dc);
+    transform: translateX(-20%) translateY(-100%) rotate(0deg);
+  }
+  to {
+    color: linear-gradient(217deg, #9256dc, #9256dc);
+    transform: translateX(-20%) translateY(-200%) rotate(360deg);
+  }
+}
+article .heart {
+  background-color: white;
+  width: 30%;
+  height: 30%;
+  position: relative;
+  font-size: 28px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+article .articleHead {
+  width: 70%;
+  height: 30%;
+}
+
+article .imageA {
+  width: 100%;
+  height: 69%;
+}
+
+/* Media Query for Desktop. Screen > 998 */
+@media all and (min-width: 768px) {
+  .wrapContent {
+    width: 94%;
+    margin: auto;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-top: -10px;
+    height: 100%;
+    box-shadow: 1px 3px 10px hsl(0deg, 0%, 96%), inset 1px 3px 10px hsl(0deg, 0%, 95%);
+    background-color: #f9f9f9;
+    margin-bottom: 15px;
+  }
+
+  .noMobile {
+    display: block;
+  }
+
+  header {
+    margin-top: -10px;
+    height: 110px;
+    background-color: #f4f4f4;
+    box-shadow: 0px 0px 30px #f9f9f9;
+    padding-top: 20px;
+    box-sizing: border-box;
+  }
+  header h1 {
+    width: 30%;
+    height: 50px;
+    margin-left: 29%;
+    padding-left: 13.5%;
+    padding-top: 20px;
+    float: left;
+  }
+  header h1 img {
+    width: 45%;
+    min-width: 220px;
+  }
+  header .navbar {
+    position: relative;
+    top: 0px;
+    left: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: hsl(0deg, 0%, 89%);
+    margin-right: 10%;
+    width: 65px;
+    height: 60px;
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-color: hsl(0deg, 0%, 94%);
+    background-image: linear-gradient(176deg, #FF79DA, #9256dc);
+    box-shadow: 0px 0px 5px hsl(0deg, 0%, 94%);
+    border-radius: 50%;
+    font-size: 70px;
+    font-weight: 700;
+    overflow: hidden;
+  }
+  header .navbar i {
+    position: relative;
+    box-shadow: 0px 12px 10px inset hsl(0deg, 0%, 60%);
+  }
+
+  nav {
+    box-sizing: border-box;
+    background-color: white;
+    clear: both;
+    width: 99.5%;
+    height: 150px;
+    overflow: hidden;
+    padding-left: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    box-shadow: -7px 5px 10px #fff, 7px 5px 10px #fff;
+  }
+  nav form {
+    width: 25%;
+    padding: 0;
+    max-width: 375px;
+    min-width: 250px;
+    height: 50px;
+    background-color: hsl(0deg, 0%, 97%);
+    box-shadow: 6px 9px 35px inset hsl(0deg, 0%, 87%);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    border-radius: 45px;
+  }
+  nav form .fa-location-dot {
+    display: none;
+  }
+  nav form input {
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  nav .fa-magnifying-glass {
+    display: block;
+    position: relative;
+    left: -40px;
+    opacity: 0.35;
+    font-size: 18px;
+  }
+
+  .instruct {
+    height: 650px;
+    padding: 0px;
+    overflow: hidden;
+  }
+  .instruct .book {
+    width: 100%;
+    height: 380px;
+    padding-top: 60px;
+    padding-bottom: 100px;
+    padding-left: 20%;
+    padding-right: 20%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    box-shadow: inset 0px 0px 500px #f1f1f1, inset 0px 35px 30px hsl(0deg, 0%, 90%);
+  }
+  .instruct .book h2 {
+    padding: 0px;
+  }
+  .instruct .book a p {
+    max-width: 350px;
+  }
+  .instruct .how {
+    position: relative;
+    top: -40px;
+    box-sizing: border-box;
+    margin: auto;
+    background-color: white;
+    width: 100%;
+    height: 700px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 100px;
+    border-radius: 50px 50px 0px 0px;
+    box-shadow: 0px -5px 40px hsl(0deg, 0%, 90%);
+  }
+  .instruct .how ol {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+  .instruct .how ol li {
+    width: 31%;
+    height: 90px;
+    font-size: 19px;
+    padding-right: 10px;
+    max-width: 400px;
+    min-width: 200px;
+  }
+  .instruct .how h2 {
+    width: 90%;
+    margin-top: 35px;
+    margin-bottom: 10px;
+  }
+
+  .restaurants {
+    overflow: hidden;
+    height: 850px;
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    box-shadow: 0px -5px 40px hsl(0deg, 0%, 90%);
+  }
+  .restaurants h2 {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .restaurants > div {
+    width: 95%;
+    height: 260px;
+    margin-bottom: 15px;
+    margin-left: 1%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    background-image: linear-gradient(200deg, hsl(0deg, 0%, 95%), #f9f9f9);
+    box-shadow: inset -3px 0px 30px hsl(0deg, 0%, 95%), inset -25px 20px 50px hsl(0deg, 0%, 90%);
+    border-radius: 20px;
+    padding-right: 100px;
+    padding-left: 3px;
+    padding-top: 0px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+  }
+  .restaurants > div article {
+    background-color: white;
+    overflow: hidden;
+    width: 365px;
+    height: 220px;
+    margin-left: 25px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    flex: 0 0 auto;
+    box-shadow: -5px 0px 25px hsl(0deg, 0%, 75%);
+  }
+
+  footer {
+    height: 175px;
+    border-radius: 0px 0px 20px 20px;
+    padding-left: 3%;
+  }
+  footer img {
+    width: 150px;
+  }
+
+  .fa-chevron-right {
+    font-size: 2.5rem;
+    color: hsla(0deg, 0%, 45%, 0.3);
+    text-shadow: -5px 1px 45px hsl(0deg, 0%, 90%);
+    position: relative;
+    top: 115px;
+    left: -90px;
+    z-index: 1;
+  }
+
+  .fa-heart {
+    position: relative;
+    top: 10px;
+    left: 10%;
+  }
+
+  .emptyArt {
+    background: linear-gradient(145deg, hsla(0deg, 0%, 75%, 0.3), hsla(0deg, 0%, 100%, 0.7), hsla(0deg, 0%, 100%, 0.7), hsla(0deg, 0%, 75%, 0.3)) !important;
+  }
+
+  /* Menu Typography
+  ///////////////////
+  */
+  #menuBody {
+    background-color: white !important;
+  }
+
+  #menuHeader {
+    margin-bottom: 100px;
+  }
+  #menuHeader h1 {
+    position: relative;
+    left: -5%;
+  }
+
+  #mainImage {
+    width: 100%;
+    margin-top: 25px;
+    background-color: #f6f6f6;
+    height: 500px;
+  }
+  #mainImage img {
+    width: 110%;
+    height: 700px;
+    align-self: center;
+    filter: blur(2px);
+    filter: opacity(90%);
+    position: relative;
+  }
+
+  .blurImg {
+    display: block;
+    height: 500px;
+    position: relative;
+    margin-left: 20%;
+    top: -500px;
+    overflow: hidden;
+  }
+  .blurImg img {
+    width: 80%;
+    height: 500px;
+  }
+
+  main {
+    background-color: transparent;
+    position: relative;
+    top: -1120px;
+    width: 100%;
+    height: 1000px;
+    margin: auto;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  main .titleHeart {
+    background-color: white;
+    width: 95%;
+    height: 75px;
+    margin-left: 0px;
+    margin: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 15px;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+  }
+  main .entrees {
+    width: 45%;
+    height: 40%;
+    margin-top: 500px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    border-radius: 50px;
+  }
+  main .entrees h3 {
+    color: black;
+    text-shadow: 0px 0px 25px hsl(0deg, 0%, 100%);
+  }
+  main .container {
+    box-shadow: none;
+    box-shadow: 0px 0px 10px hsl(0deg, 0%, 65%);
+  }
+  main .mainDish {
+    width: 45%;
+    height: 40%;
+    margin-top: 500px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    border-radius: 50px;
+  }
+  main .mainDish h3 {
+    color: black;
+    text-shadow: 0px 0px 25px hsl(0deg, 0%, 100%);
+  }
+  main .desserts {
+    width: 45%;
+    height: 40%;
+    margin-top: 20px;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+    border-radius: 50px;
+  }
+  main .desserts h3 {
+    color: black;
+    text-shadow: 0px 0px 25px hsl(0deg, 0%, 100%);
+  }
+  main .orderBtn {
+    width: 40%;
+    order: 2;
+    position: relative;
+    top: 45%;
+    left: -25%;
+  }
+}
+@media all and (min-width: 768px) and (max-width: 1450px) {
+  header .navbar {
+    left: 15%;
+  }
+
+  .how ol li {
+    width: 31% !important;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+
+  .restaurants > div {
+    height: 250px;
+  }
+  .restaurants > div > article {
+    width: 30% !important;
+    height: 90%;
+    margin-right: 4px;
+  }
+
+  .fa-chevron-right {
+    top: 105px;
+  }
+}
 /*    <nav>
 <!-- Add Location Searchbar-->
 <h2>Book the menu you like</h2>

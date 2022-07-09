@@ -10,11 +10,11 @@
 </head>
 
 <body>
-
+    <div class="wrapContent">
     <header>
-        <h1><img src="/Users/jaaeamor/Documents/ohMyFood/images/logo/ohmyfood.png" alt="ohmyfood"> <!-- Add ohmyfood png --></h1>
-    </header>
-
+        <h1><img src="/Users/jaaeamor/Documents/ohMyFood/images/logo/ohmyfood.png" alt="ohmyfood"></h1>
+        <div class="navbar"><i class="fa-solid fa-circle-user"></i></div>
+        </header>
     <nav>
         <form action="#">
             <i class="fa-solid fa-location-dot"></i>
@@ -23,8 +23,9 @@
                 placeholder="Paris, Belleville"
                 name="Search">
         </form>
+       <i class="fa-solid fa-magnifying-glass"></i>
         </nav>
-    
+    <div class="instruct">
         <div class="book">
         <h2>Book the menu you like</h2>
         <p>Discover top-of-the-art restaurants we picked for you</p>
@@ -34,59 +35,101 @@
     <div class="how">
         <h2>How it works</h2>
         <ol>
-        <li> <i class="fa-solid fa-mobile-screen-button"></i>Choose a restaurant</li>
-        <li> <i class="fa-solid fa-list-ul"></i> Create your menu</li>
-        <li> <i class="fa-solid fa-store"></i>Go enjoy it at the restaurant</li>
+            <li><div class="list-number">1</div><i class="fa-solid fa-mobile-screen-button"></i>Choose a restaurant</li>
+            <li><div class="list-number">2</div><i class="fa-solid fa-list-ul"></i> Create your menu</li>
+            <li><div class="list-number">3</div><i class="fa-solid fa-store"></i>Go enjoy it at the restaurant</li>
         </ol>
+        </div>
         </div>
 
     <div class="restaurants"> <!-- Each Card Also Contains "New" and a "<3"-->
 
         <h2>Restaurants</h2>
 
-        <article><a href="#">
+        <div class="restOptions">
+        <article id="flexArt">
 
-            <img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="#" width="250px" height="200px"> <!-- DEFINE DIMENSIONS IN SASS LATER -->
-            <h4>The Full Palette</h4>
+            <a href="#" class="imageA"><img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="#"></a> <!-- DEFINE DIMENSIONS IN SASS LATER -->
+            <div class="articleHead"><a href="#"><h4>The Full Palette</h4></a>
             <p>New York</p>
+            </div>
 
-            </a></article>
+            <a href="#" class="heart"><i class="fa-solid fa-heart"></i></a>
+            </article>
 
-        <article><a href="#">
 
-            <img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="#" width="250px" height="200px"> <!-- DEFINE DIMENSIONS IN SASS LATER -->
-            <h4>The Enchanted Plate</h4>
-            <p>New York</p>
-    
-            </a></article>
+        <article id="flexArt">
 
-        <article><a href="root/menu/bastille.html" target="_blank">
-
-            <img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="#" width="250px" height="200px"> <!-- DEFINE DIMENSIONS IN SASS LATER -->
-            <h4>Bastille</h4>
-            <p>New York</p>
-        
-            </a></article>
-
-        <article><a href="#">
-
-            <img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="#" width="250px" height="200px"> <!-- DEFINE DIMENSIONS IN SASS LATER -->
-            <h4>Le Gourmand</h4>
-            <p>New York</p>
+            <a href="#" class="imageA"><img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="#"></a> <!-- DEFINE DIMENSIONS IN SASS LATER -->
             
-            </a></article>
+            <div class="articleHead"><a href="#"><h4>The Enchanted Plate</h4></a>
+            <p>New York</p>
+            </div>
+
+            <a href="#" class="heart"><i class="fa-solid fa-heart"></i></a>
+            </article>
+            
+
+        <article id="flexArt">
+            <a href="root/menu/bastille.html" class="imageA" target="_blank"><img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="#"></a> <!-- DEFINE DIMENSIONS IN SASS LATER -->
+            <div class="articleHead"><a href="#"></a><h4>Bastille</h4></a>
+            <p>New York</p>
+            </div>
+        
+            <a href="#" class="heart"><i class="fa-solid fa-heart"></i></a>
+            </article>
+
+
+        <article id="flexArt">
+
+            <a href="#" class="imageA"><img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="#"></a> <!-- DEFINE DIMENSIONS IN SASS LATER -->
+            <div class="articleHead"><a href="#"><h4>Le Gourmand</h4></a>
+            <p>New York</p>
+            </div>
+
+            <a href="#" class="heart"><i class="fa-solid fa-heart"></i></a>
+            </article>
+            </div>
+
+
+            <i class="fa-solid fa-chevron-right" class="noMobile"></i>
+
+            <h2 class="favHead" class="noMobile"> My Favorites</h2>
+
+            <div id="favorites" class="noMobile">
+                <article id="flexArt">
+
+                    <a href="#" class="imageA"><img src="/Users/jaaeamor/Documents/ohMyFood/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="#"></a> <!-- DEFINE DIMENSIONS IN SASS LATER -->
+                    <div class="articleHead"><a href="#"><h4>The Enchanted Plate</h4></a>
+                    <p>New York</p>
+                    </div>
+            
+                    <a href="#" class="heart"><i class="fa-solid fa-heart"></i></a>
+                    </article>
+
+                    <article id="flexArt" class="emptyArt"></article>
+                    <article id="flexArt" class="emptyArt"></article>
+                    <article id="flexArt" class="emptyArt"></article>
+                    <article id="flexArt" class="emptyArt"></article>
+                    <article id="flexArt" class="emptyArt"></article>
+                    <article id="flexArt" class="emptyArt"></article>
+                    
+
+            </div>
+            <i class="fa-solid fa-chevron-right" class="noMobile"></i>
 
         </div>
 
     <footer>
 
-        <h3><img src="/Users/jaaeamor/Documents/ohMyFood/images/logo/ohmyfood.png" alt="ohmyfood" width="100px"> <!-- add ohmyfood logo --></h3>
+        <h3><img src="/Users/jaaeamor/Documents/ohMyFood/images/logo/ohmyfood.png" alt="ohmyfood"> <!-- add ohmyfood logo --></h3>
 
         <a href="#"><i class="fa-solid fa-utensils"></i>  Suggest a restaurant</a>
         <a href="#"><i class="fa-solid fa-handshake-angle"></i> Become a partner</a>
         <a href="#">Legal</a>
-        <a href="#">Contact</a>
+        <a href="mailto: abc@example.com">Contact</a>
 
         </footer>
+        </div>
 </body>
 </html>

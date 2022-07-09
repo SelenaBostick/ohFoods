@@ -374,6 +374,23 @@ main {
         margin-left: 4px;
     }
 
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20%);
+        }
+
+        10% {
+            opacity: 0;
+        }
+        95% {
+            transform: translateY(0%);
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
     .container {
         width: 95%;
         background-color: white;
@@ -389,6 +406,20 @@ main {
         flex-direction: row;
         flex-wrap: wrap;
         align-items: space-around;
+        opacity: 0;
+        animation: fadeIn 900ms cubic-bezier(.49,.1,.21,.98) forwards;
+        &--1 {
+            animation-delay: 200ms;
+        }
+        &--2 {
+            animation-delay: 400ms;
+        }
+        &--3 {
+            animation-delay: 600ms;
+        }
+        &--4 {
+            animation-delay: 800ms;
+        }
 
         h4 {
             width: 80%;
@@ -411,7 +442,8 @@ main {
         span {
             font-weight: 700;
         }
-
+        
+        
     }
 
     .order {

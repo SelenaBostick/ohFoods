@@ -328,6 +328,21 @@ main .underline {
   margin-bottom: 20px;
   margin-left: 4px;
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  10% {
+    opacity: 0;
+  }
+  95% {
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 main .container {
   width: 95%;
   background-color: white;
@@ -343,6 +358,20 @@ main .container {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: space-around;
+  opacity: 0;
+  animation: fadeIn 900ms cubic-bezier(0.49, 0.1, 0.21, 0.98) forwards;
+}
+main .container--1 {
+  animation-delay: 200ms;
+}
+main .container--2 {
+  animation-delay: 400ms;
+}
+main .container--3 {
+  animation-delay: 600ms;
+}
+main .container--4 {
+  animation-delay: 800ms;
 }
 main .container h4 {
   width: 80%;

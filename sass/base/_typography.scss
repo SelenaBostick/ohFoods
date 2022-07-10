@@ -8,6 +8,9 @@
 a {
     text-decoration: none;
 }
+.backLayer{
+    display: none;
+}
 
 .fa-heart {
     -webkit-text-stroke-color: #333;
@@ -446,9 +449,9 @@ main {
         }
         &:hover {
             .checkGreen {
-                animation: slideLeft 500ms ease-in-out forwards;
+                animation: slideLeft 350ms ease-in-out forwards;
                 & i {
-                    animation: spinCheck 500ms ease-in-out forwards;
+                    animation: spinCheck 350ms ease-in-out forwards;
                 }
             }
         }
@@ -591,7 +594,6 @@ article .imageA {
     color: white;
     box-sizing: border-box;
     font-size: 30px;
-    animation: spinCheck 500ms ease reverse;
 }
 /* Media Query for Desktop. Screen > 998 */
 
@@ -926,9 +928,9 @@ article .imageA {
         //justify-content: center;
         img {
             width: 110%;
-            height: 700px;
+            height: 500px;
             align-self: center;
-            filter: blur(2px);
+            filter: blur(4px);
             filter: opacity(90%);
             //border-radius: 50px;
             position: relative;
@@ -938,7 +940,7 @@ article .imageA {
     }
 
     .blurImg {
-        display: block;
+        display: none;
         height: 500px;
         position: relative;
         margin-left: 20%;
@@ -952,11 +954,10 @@ article .imageA {
             // box-shadow: 0px 0px 50px hsla(0, 0%, 50%, 1);
         }
     }
-
     main {
-        background-color: transparent; // hsla(0, 0%, 95%, 0.2);
+        background: transparent;
         position: relative;
-        top: -1120px;
+        top: -620px;
         width: 100%;
         height: 1000px;
         margin: auto;
@@ -965,6 +966,16 @@ article .imageA {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+
+        .backLayer{
+            display: block;
+            z-index: 0;
+            position: absolute;
+            top: 58%;
+            background-color: #f9f9f9;
+            width: 98%;
+            height: 100%;
+        }
 
         .titleHeart {
             background-color: white;
@@ -981,9 +992,16 @@ article .imageA {
             flex-wrap: nowrap;
             justify-content: space-between;
             align-content: center;
+
+            i{
+                color: transparent;
+                position: relative;
+                top: -5%;
+            }
         }
 
         .entrees {
+            z-index: 1;
             width: 45%;
             height: 40%; //430px;
             margin-top: 500px;
@@ -1003,11 +1021,13 @@ article .imageA {
         }
 
         .container {
+            z-index: 1;
             box-shadow: none;
             box-shadow: 0px 0px 10px hsla(0, 0%, 65%, 1);
         }
 
         .mainDish {
+            z-index: 1;
             width: 45%;
             height: 40%; //430px;
             margin-top: 500px;
@@ -1027,6 +1047,7 @@ article .imageA {
         }
 
         .desserts {
+            z-index: 1;
             width: 45%;
             height: 40%; //430px;
             margin-top: 20px;

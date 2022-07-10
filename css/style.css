@@ -356,6 +356,14 @@ main .underline {
     width: 100px;
   }
 }
+@keyframes spinCheck {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 main .container {
   box-sizing: border-box;
   width: 95%;
@@ -388,7 +396,10 @@ main .container--4 {
   animation-delay: 800ms;
 }
 main .container:hover .checkGreen {
-  animation: slideLeft 300ms ease-in-out forwards;
+  animation: slideLeft 500ms ease-in-out forwards;
+}
+main .container:hover .checkGreen i {
+  animation: spinCheck 500ms ease-in-out forwards;
 }
 main .container div:first-of-type {
   display: flex;
@@ -396,6 +407,7 @@ main .container div:first-of-type {
   flex-wrap: wrap;
   align-items: space-around;
   padding: 15px 15px 15px 15px;
+  width: 100%;
 }
 main .container h4 {
   width: 80%;
@@ -416,7 +428,6 @@ main .container p {
 main .container span {
   font-weight: 700;
   position: relative;
-  left: 5%;
 }
 main .order {
   text-align: center;
@@ -514,7 +525,8 @@ article .imageA {
   align-items: center;
   color: white;
   box-sizing: border-box;
-  font-size: 25px;
+  font-size: 30px;
+  animation: spinCheck 500ms ease reverse;
 }
 
 /* Media Query for Desktop. Screen > 998 */

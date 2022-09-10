@@ -478,13 +478,13 @@ main .container--1 {
   animation-delay: 1600ms;
 }
 main .container--2 {
-  animation-delay: 2000ms;
+  animation-delay: 1900ms;
 }
 main .container--3 {
-  animation-delay: 2200ms;
+  animation-delay: 2100ms;
 }
 main .container--4 {
-  animation-delay: 2400ms;
+  animation-delay: 2300ms;
 }
 main .container:hover .checkGreen {
   animation: slideLeft 350ms ease-in-out both 100ms;

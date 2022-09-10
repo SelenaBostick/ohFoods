@@ -1,11 +1,24 @@
-/* Add mixins/variables/loops later */
+/*  PROPER WAY TO RESET BROWSER DEFAULTS.
+    USE IN FUTURE DESIGN :)
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+} */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap");
 * {
   font-family: Roboto;
 }
 
+.fa-chevron-right {
+  position: relative;
+  left: 100%;
+}
+
 #spinLoad {
-  display: none;
+  display: block;
   position: fixed;
   background-color: #f7f7f7;
   width: 100vw;
@@ -61,13 +74,15 @@
 }
 @keyframes loadIn {
   0% {
-    display: block;
     opacity: 1;
+    right: 0px;
   }
-  88% {
+  99% {
     opacity: 1;
+    right: 0px;
   }
   100% {
+    right: 100%;
     opacity: 0;
   }
 }
@@ -210,7 +225,8 @@ nav .fa-magnifying-glass {
   font-size: 18px;
   font-weight: 700;
   width: 95%;
-  max-width: 600px;
+  max-width: 525px;
+  margin: auto;
   box-sizing: border-box;
   padding: 10px 0px 5px 10px;
   height: 80px;
@@ -617,11 +633,9 @@ article .imageA {
     background-color: #f9f9f9;
     margin-bottom: 15px;
   }
-
   .noMobile {
     display: block;
   }
-
   header {
     margin-top: -10px;
     height: 110px;
@@ -670,7 +684,6 @@ article .imageA {
     position: relative;
     box-shadow: 0px 12px 10px inset hsl(0deg, 0%, 60%);
   }
-
   nav {
     box-sizing: border-box;
     background-color: white;
@@ -717,7 +730,6 @@ article .imageA {
     opacity: 0.35;
     font-size: 18px;
   }
-
   .instruct {
     height: 650px;
     padding: 0px;
@@ -780,7 +792,6 @@ article .imageA {
     margin-top: 35px;
     margin-bottom: 10px;
   }
-
   .restaurants {
     overflow: hidden;
     height: 850px;
@@ -835,7 +846,6 @@ article .imageA {
     flex: 0 0 auto;
     box-shadow: -5px 0px 25px hsl(0deg, 0%, 75%);
   }
-
   footer {
     height: 175px;
     border-radius: 0px 0px 20px 20px;
@@ -844,7 +854,6 @@ article .imageA {
   footer img {
     width: 150px;
   }
-
   .fa-chevron-right {
     font-size: 2.5rem;
     color: hsla(0deg, 0%, 45%, 0.3);
@@ -854,24 +863,23 @@ article .imageA {
     left: -90px;
     z-index: 1;
   }
-
   .fa-heart {
     position: relative;
     top: 10px;
     left: 10%;
   }
-
   .emptyArt {
     background: linear-gradient(145deg, hsla(0deg, 0%, 75%, 0.3), hsla(0deg, 0%, 100%, 0.7), hsla(0deg, 0%, 100%, 0.7), hsla(0deg, 0%, 75%, 0.3)) !important;
   }
-
+  .emptyArt h4 {
+    display: none;
+  }
   /* Menu Typography
   ///////////////////
   */
   #menuBody {
     background-color: white !important;
   }
-
   #menuHeader {
     margin-bottom: 100px;
   }
@@ -879,7 +887,6 @@ article .imageA {
     position: relative;
     left: -5%;
   }
-
   #mainImage {
     width: 100%;
     margin-top: 25px;
@@ -894,7 +901,6 @@ article .imageA {
     filter: opacity(90%);
     position: relative;
   }
-
   .blurImg {
     display: none;
     height: 500px;
@@ -907,7 +913,6 @@ article .imageA {
     width: 80%;
     height: 500px;
   }
-
   main {
     background: transparent;
     position: relative;
@@ -1013,13 +1018,11 @@ article .imageA {
   header .navbar {
     left: 15%;
   }
-
   .how ol li {
     width: 31% !important;
     margin-right: 2%;
     margin-left: 2%;
   }
-
   .restaurants > div {
     height: 250px;
   }
@@ -1032,7 +1035,6 @@ article .imageA {
   .restaurants > div > article > h4 {
     min-width: 175px;
   }
-
   .fa-chevron-right {
     top: 105px;
   }

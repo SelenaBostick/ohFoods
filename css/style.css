@@ -22,7 +22,7 @@
   position: fixed;
   background-color: #f7f7f7;
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   z-index: 5000;
   animation: loadIn 2s ease-in-out forwards;
 }
@@ -100,7 +100,7 @@ a {
 }
 
 .wrapContent {
-  all: none;
+  all: unset;
   scroll-behavior: smooth;
 }
 
@@ -194,6 +194,13 @@ nav .fa-magnifying-glass {
   box-shadow: 0px 5px 8px #c6c6c6;
   background-image: linear-gradient(176deg, #FF79DA, #9256dc);
 }
+.book a p:hover {
+  position: relative;
+  top: 1px;
+  background-image: linear-gradient(176deg, hsl(317deg, 100%, 74%), hsl(269deg, 66%, 60%));
+  opacity: 0.95;
+  box-shadow: 0px 3px 6px #777;
+}
 
 .how {
   margin: auto;
@@ -251,7 +258,7 @@ nav .fa-magnifying-glass {
 }
 @keyframes bgLight {
   from {
-    background-color: white;
+    background-color: hsl(0deg, 0%, 97%);
   }
   to {
     background-color: hsl(267deg, 66%, 95%);
@@ -469,7 +476,6 @@ main .container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: space-around;
   opacity: 0;
   animation: fadeIn 1s cubic-bezier(0.49, 0.1, 0.21, 0.98) forwards;
   animation-delay: 5s;
@@ -496,27 +502,43 @@ main .container div:first-of-type {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: space-around;
   padding: 15px 15px 15px 15px;
   width: 100%;
 }
 main .container h4 {
   width: 80%;
+  height: 50%;
+  max-height: 50%;
   font-size: 18px;
   font-weight: bold;
   margin-bottom: -5px;
   margin-top: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .container p {
   width: 100%;
+  height: 45%;
+  max-height: 45%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   padding-right: 10px;
   margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* span:first-of-type{
+       background-color: blue;
+       max-height: 100%;
+       max-width: 60%;
+       min-width: 50%;
+       max-height: 100%;
+       overflow: hidden;
+       text-overflow: ellipsis;
+   }*/
 }
-main .container span {
+main span {
   font-weight: 700;
   position: relative;
 }
@@ -534,6 +556,13 @@ main .order {
   border-radius: 50px;
   box-shadow: 0px 5px 8px #c6c6c6;
   background-image: linear-gradient(176deg, #FF79DA, #9256dc);
+}
+main .order:hover {
+  position: relative;
+  top: 1px;
+  background-image: linear-gradient(176deg, hsl(317deg, 100%, 74%), hsl(269deg, 66%, 60%));
+  opacity: 0.95;
+  box-shadow: 0px 3px 6px #777;
 }
 
 #longText {
@@ -996,6 +1025,7 @@ article .imageA {
   main .desserts {
     z-index: 1;
     width: 45%;
+    margin-left: -20px;
     height: 40%;
     margin-top: 20px;
     padding-left: 2%;

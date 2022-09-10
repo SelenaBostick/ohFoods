@@ -5,6 +5,80 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shrikhand&display=swap');
 
+#spinLoad {
+    display: none;//block;
+    position: fixed;
+    background-color: #f7f7f7;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5000;
+    animation: loadIn 2s ease-in-out forwards;
+
+    .cup {
+        height: 140px;
+        width: 180px;
+        border: 6px solid #dedede;
+        position: absolute;
+        opacity: 0.8;
+        top: 40%;
+        left: 40%;
+        border-radius: 0px 0px 70px 70px;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .handle{
+        display: none;
+        height: 16px;
+        width: 130px;
+        background-color: #ddd;
+        border: 6px solid #ddd;
+        opacity: 0.8;
+        position: fixed;
+        left: 45%;
+        top: 60%;
+        border-radius: 50%;
+        z-index: -1;
+    }
+    
+    .bgLiquid{
+        width: 290px;
+        height: 290px;
+        background-image: linear-gradient(35deg, #d1bbe8,#efc6e9);
+        position: relative;
+        left: -50px;
+        top: 150px;
+        border-radius: 38%;
+        animation: fillLiquid 1950ms cubic-bezier(.5,.12,.54,.95) forwards 15ms;
+    }
+}
+
+@keyframes fillLiquid {
+    0%{
+        top: 150px;
+        transform: rotate(40deg);
+    }
+    100%{
+        top: 30px;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loadIn {
+0% {
+    display: block;
+    opacity: 1;
+}
+88% {
+    opacity: 1;
+}
+100%{
+    opacity: 0;
+}
+}
+
+
+
 a {
     text-decoration: none;
 }
@@ -119,6 +193,8 @@ nav {
         width: 60%;
         font-size: 24px;
         border-radius: 50px;
+        min-width: 275px;
+        max-width: 375px;
         box-shadow: 0px 5px 8px #c6c6c6;
         background-image: linear-gradient(176deg, $ColorSecondary, $ColorPrimary);
     }
@@ -234,6 +310,8 @@ nav {
             height: 100%;
             max-height: 230px;
             object-fit: cover;
+            position: relative;
+            top: -3%;
 
         }
 
@@ -449,9 +527,9 @@ main {
         }
         &:hover {
             .checkGreen {
-                animation: slideLeft 350ms ease-in-out forwards;
+                animation: slideLeft 350ms ease-in-out both;
                 & i {
-                    animation: spinCheck 350ms ease-in-out forwards;
+                    animation: spinCheck 350ms ease-in-out ;
                 }
             }
         }
@@ -559,7 +637,7 @@ a.heart{
 
 article .heart {
     background-color: white;
-    width: 30%;
+    width: 25%;
     height: 30%;
     position: relative;
     font-size: 28px;
@@ -568,6 +646,7 @@ article .heart {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    left: 10px;
 
 }
 
@@ -595,6 +674,8 @@ article .imageA {
     box-sizing: border-box;
     font-size: 30px;
 }
+
+
 /* Media Query for Desktop. Screen > 998 */
 
 @media all and (min-width: 768px) {
@@ -1100,8 +1181,13 @@ article .imageA {
 
             &>article {
                 width: 30% !important;
+                min-width: 250px;
                 height: 90%;
                 margin-right: 4px;
+
+                &> h4{
+                    min-width: 175px;
+                }
             }
         }
     }

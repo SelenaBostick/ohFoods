@@ -425,7 +425,6 @@ main .underline {
 }
 @keyframes fadeIn {
   0% {
-    opacity: 0;
     transform: translateY(20%);
   }
   10% {
@@ -472,25 +471,26 @@ main .container {
   flex-wrap: nowrap;
   align-items: space-around;
   opacity: 0;
-  animation: fadeIn 900ms cubic-bezier(0.49, 0.1, 0.21, 0.98) forwards;
+  animation: fadeIn 1s cubic-bezier(0.49, 0.1, 0.21, 0.98) forwards;
+  animation-delay: 5s;
 }
 main .container--1 {
-  animation-delay: 200ms;
+  animation-delay: 1600ms;
 }
 main .container--2 {
-  animation-delay: 400ms;
+  animation-delay: 2000ms;
 }
 main .container--3 {
-  animation-delay: 600ms;
+  animation-delay: 2200ms;
 }
 main .container--4 {
-  animation-delay: 800ms;
+  animation-delay: 2400ms;
 }
 main .container:hover .checkGreen {
-  animation: slideLeft 350ms ease-in-out both;
+  animation: slideLeft 350ms ease-in-out both 100ms;
 }
 main .container:hover .checkGreen i {
-  animation: spinCheck 350ms ease-in-out;
+  animation: spinCheck 350ms ease-in-out 100ms;
 }
 main .container div:first-of-type {
   display: flex;
@@ -618,6 +618,7 @@ article .imageA {
   color: white;
   box-sizing: border-box;
   font-size: 30px;
+  z-index: 2;
 }
 
 /* Media Query for Desktop. Screen > 998 */
@@ -961,6 +962,7 @@ article .imageA {
     width: 45%;
     height: 40%;
     margin-top: 500px;
+    margin-left: 1px;
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 40px;
@@ -970,9 +972,9 @@ article .imageA {
   main .entrees h3 {
     color: black;
     text-shadow: 0px 0px 25px hsl(0deg, 0%, 100%);
+    min-width: 395px;
   }
   main .container {
-    z-index: 1;
     box-shadow: none;
     box-shadow: 0px 0px 10px hsl(0deg, 0%, 65%);
   }

@@ -482,7 +482,6 @@ main {
 
     @keyframes fadeIn {
         0% {
-            opacity: 0;
             transform: translateY(20%);
         }
 
@@ -490,6 +489,7 @@ main {
             opacity: 0;
         }
         95% {
+           // opacity: 0;
             transform: translateY(0%);
         }
         100% {
@@ -533,24 +533,25 @@ main {
         flex-wrap: nowrap;
         align-items: space-around;
         opacity: 0;
-        animation: fadeIn 900ms cubic-bezier(.49,.1,.21,.98) forwards;
+        animation: fadeIn 1s  cubic-bezier(.49,.1,.21,.98) forwards;
+        animation-delay: 5s;
         &--1 {
-            animation-delay: 200ms;
+            animation-delay: 1600ms;
         }
         &--2 {
-            animation-delay: 400ms;
+            animation-delay: 2000ms;
         }
         &--3 {
-            animation-delay: 600ms;
+            animation-delay: 2200ms;
         }
         &--4 {
-            animation-delay: 800ms;
+            animation-delay: 2400ms;
         }
         &:hover {
             .checkGreen {
-                animation: slideLeft 350ms ease-in-out both;
+                animation: slideLeft 350ms ease-in-out both 100ms;
                 & i {
-                    animation: spinCheck 350ms ease-in-out ;
+                    animation: spinCheck 350ms ease-in-out 100ms ;
                 }
             }
         }
@@ -694,6 +695,7 @@ article .imageA {
     color: white;
     box-sizing: border-box;
     font-size: 30px;
+    z-index: 2;
 }
 
 
@@ -1110,6 +1112,7 @@ article .imageA {
             width: 45%;
             height: 40%; //430px;
             margin-top: 500px;
+            margin-left: 1px;
             padding-left: 2%;
             padding-right: 2%;
             padding-bottom: 40px;
@@ -1122,11 +1125,12 @@ article .imageA {
             h3 {
                 color: black;
                 text-shadow: 0px 0px 25px hsla(0, 0%, 100%, 1);
+                min-width: 395px;
             }
         }
 
         .container {
-            z-index: 1;
+            //z-index: 1;
             box-shadow: none;
             box-shadow: 0px 0px 10px hsla(0, 0%, 65%, 1);
         }
